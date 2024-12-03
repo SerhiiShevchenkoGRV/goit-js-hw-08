@@ -78,7 +78,9 @@ function createGallery() {
   gallery.addEventListener("click", (event) => {
     event.preventDefault();
 
-    const instance = basicLightbox.create(`${event.target.outerHTML}`);
+    const instance = basicLightbox.create(
+      ` <img src="${event.target.dataset.source}" alt="${event.target.alt}">`
+    );
     if (event.target.nodeName === "IMG") {
       instance.show();
     }
